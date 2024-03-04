@@ -1,4 +1,4 @@
---extra-index-url https://download.pytorch.org/whl/cu116
+--extra-index-url https://download.pytorch.org/whl/cu117
 bokeh==2.4.3 
 matplotlib
 jupyterlab-nvdashboard
@@ -6,8 +6,8 @@ datasets==2.17.1
 tqdm==4.66.1
 gluonts==0.14.4
 transformers==4.37.2
-torch==1.13.0+cu116
-torchvision==0.14.0+cu116 
+torch==1.13.0+cu117 
+torchvision==0.14.0+cu117
 torchaudio==0.13.0
 ujson==5.9.0
 accelerate==0.27.2

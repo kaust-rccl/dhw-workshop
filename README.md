@@ -12,5 +12,9 @@ pip install -r cpu-requirements.txt
 For GPUs:
 pip install -r gpu-requirements.txt
 
+Docker images:
+
+- mshaikh/kubeflow-demo:jupyter_tstfcpu
+- mshaikh/kubeflow-demo:jupyter_tstfgpu
 
 
