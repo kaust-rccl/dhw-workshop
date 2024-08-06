@@ -9,8 +9,11 @@ For compiling, the following are required:
 A conda environment file is provided for convinience to create the software environment. 
 
 `conda env create -f software_stack.yaml -p $PWD/install`
+
 `conda activate ./install`
+
 `cd C/`
+
 `make VERBOSE=1`
 
 ## Running C version
