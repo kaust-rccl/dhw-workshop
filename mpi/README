@@ -1,0 +1,13 @@
+# Solving 2D Heat eaquation with MPI 
+
+## Compilation
+
+For compiling, the following are required:
+- a C compiler (e.g. GCC/Intel/clang etc)
+- MPI library (e.g. OpenMPI, IntelMPI etc)
+
+A conda environment file is provided for convinience to create the software environment. 
+
+```conda env create -f software_stack.yaml``` 
+
+
