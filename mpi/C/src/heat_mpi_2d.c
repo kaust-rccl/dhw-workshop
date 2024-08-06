@@ -13,9 +13,9 @@
 #include <stdbool.h>
 #include <math.h>
 
-#define N			64
+#define N		64
 #define MAX_ITER	4000
-#define TOL			1e-4
+#define TOL		1e-4
 #define MAX_TEMP	100.0
 
 float** allocate(float**);

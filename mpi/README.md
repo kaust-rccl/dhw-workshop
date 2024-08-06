@@ -1,6 +1,6 @@
 # Solving 2D Heat eaquation with MPI 
 
-## Compilation
+## Compilation of C version
 
 For compiling, the following are required:
 - a C compiler (e.g. GCC/Intel/clang etc)
@@ -10,9 +10,10 @@ A conda environment file is provided for convinience to create the software envi
 
 `conda env create -f software_stack.yaml -p $PWD/install`
 `conda activate ./install`
+`cd C/`
 `make VERBOSE=1`
 
-## Execution
+## Running C version
 
 To execute the serial version please use the following command line:
 
