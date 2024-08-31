@@ -1,0 +1,357 @@
+Auto-Transcript Start Time:  12:36:39, 12 Aug 2024 Pakistan Standard Time 
+Current Directory: "D:\HPC Workshop\Ansys Cases\parametric_mixer\parametric_ansys_project"
+
+              Welcome to ANSYS Fluent 2024 R1
+
+              Copyright 1987-2024 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: Nov 22 2023 10:31:01 EST  Build Id: 10184  
+ 
+Connected License Server List:	1055@localhost
+
+*********************************************
+Info: Your license enables 4-way parallel execution.
+For faster simulations, please start the application with the appropriate parallel options.
+*********************************************
+
+Host spawning Node 0 on machine "ALI-DESKTOP" (win64).
+
+-------------------------------------------------------------------------------
+ID    Hostname     Core  O.S.         PID    Vendor                          
+-------------------------------------------------------------------------------
+n0    ALI-DESKTOP  1/8  Windows-x64  7944   Intel(R) Core(TM) i7-8665U      
+host  ALI-DESKTOP       Windows-x64  18168  Intel(R) Core(TM) i7-8665U      
+
+MPI Option Selected: intel
+-------------------------------------------------------------------------------
+
+Cleanup script file is D:\\HPC Workshop\\Ansys Cases\\parametric_mixer\\parametric_ansys_project\\cleanup-fluent-ALI-DESKTOP-18168.bat
+
+Posting ANSYS Product Improvement Program startup data
+Done.
+
+> (cx-gui-do cx-activate-item "Key Behavioral Changes*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "MenuBar*ReadSubMenu*Case & Data...")
+(cx-gui-do cx-set-file-dialog-entries "Select File" '( "Static_Mixer.cas.h5") "CFF Case Files (*.cas.h5 )")
+Fast-loading "D:\software\ANSYS Inc\v241\fluent\fluent24.1.0\\addons\afd\lib\hdfio.bin"
+Done.
+Multicore SMT processors detected. Processor affinity set!
+
+Reading from ALI-DESKTOP:"D:/HPC Workshop/Ansys Cases/parametric_mixer/parametric_ansys_project/Static_Mixer.cas.h5" in NODE0 mode ...
+  Reading mesh ...
+       22771 cells,     1 cell zone  ...
+          22771 polyhedra cells,  zone id: 97
+      119140 faces,     5 face zones ...
+         114959 polygonal interior faces,  zone id: 96
+           3873 polygonal wall faces,  zone id: 20
+            104 polygonal pressure-outlet faces,  zone id: 19
+            103 polygonal velocity-inlet faces,  zone id: 18
+            101 polygonal velocity-inlet faces,  zone id: 17
+       82247 nodes,     1 node zone  ...
+Warning: reading 4 partition grid onto 1 compute node machine.
+         Combining every 4 partitions.
+  Done.
+
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	interior--fluid
+	wall
+	outlet
+	inlet2
+	inlet1
+	fluid
+     parallel,
+Done.
+
+Preparing mesh for display...
+Done.
+
+Reading from ALI-DESKTOP:"D:/HPC Workshop/Ansys Cases/parametric_mixer/parametric_ansys_project/Static_Mixer.dat.h5" in NODE0 mode ...
+
+
+  Reading results.
+Parallel variables...
+Done.
+(cx-gui-do cx-activate-item "MenuBar*ReadSubMenu*Case & Data...")
+(cx-gui-do cx-set-file-dialog-entries "Select File" '( "D:/HPC Workshop/Ansys Cases/parametric_mixer/parametric_ansys_project/Static_Mixer.cffdb/Static_Mixer-Solve/Static_Mixer.cas.h5") "CFF Case Files (*.cas.h5 )")
+Multicore SMT processors detected. Processor affinity set!
+
+       Clearing partially read grid.
+
+Reading from ALI-DESKTOP:"D:/HPC Workshop/Ansys Cases/parametric_mixer/parametric_ansys_project/Static_Mixer.cffdb/Static_Mixer-Solve/Static_Mixer.cas.h5" in NODE0 mode ...
+  Reading mesh ...
+       22771 cells,     1 cell zone  ...
+          22771 polyhedra cells,  zone id: 97
+      119140 faces,     5 face zones ...
+         114959 polygonal interior faces,  zone id: 96
+           3873 polygonal wall faces,  zone id: 20
+            104 polygonal pressure-outlet faces,  zone id: 19
+            103 polygonal velocity-inlet faces,  zone id: 18
+            101 polygonal velocity-inlet faces,  zone id: 17
+       82247 nodes,     1 node zone  ...
+Warning: reading 4 partition grid onto 1 compute node machine.
+         Combining every 4 partitions.
+  Done.
+
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	interior--fluid
+	wall
+	outlet
+	inlet2
+	inlet1
+	fluid
+     parallel,
+Done.
+
+Preparing mesh for display...
+Done.
+
+Error: File "D:/HPC Workshop/Ansys Cases/parametric_mixer/parametric_ansys_project/Static_Mixer.cffdb/Static_Mixer-Solve/Static_Mixer.dat.h5" not found!
+Error Object: #f
+(cx-gui-do cx-activate-item "Error*OK")
+(cx-gui-do cx-activate-item "MenuBar*ReadSubMenu*Case & Data...")
+(cx-gui-do cx-set-file-dialog-entries "Select File" '( "D:/HPC Workshop/Ansys Cases/parametric_mixer/parametric_ansys_project/Static_Mixer.cas.h5") "CFF Case Files (*.cas.h5 )")
+Multicore SMT processors detected. Processor affinity set!
+
+       Clearing partially read grid.
+
+Reading from ALI-DESKTOP:"D:/HPC Workshop/Ansys Cases/parametric_mixer/parametric_ansys_project/Static_Mixer.cas.h5" in NODE0 mode ...
+  Reading mesh ...
+       22771 cells,     1 cell zone  ...
+          22771 polyhedra cells,  zone id: 97
+      119140 faces,     5 face zones ...
+         114959 polygonal interior faces,  zone id: 96
+           3873 polygonal wall faces,  zone id: 20
+            104 polygonal pressure-outlet faces,  zone id: 19
+            103 polygonal velocity-inlet faces,  zone id: 18
+            101 polygonal velocity-inlet faces,  zone id: 17
+       82247 nodes,     1 node zone  ...
+Warning: reading 4 partition grid onto 1 compute node machine.
+         Combining every 4 partitions.
+  Done.
+
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	interior--fluid
+	wall
+	outlet
+	inlet2
+	inlet1
+	fluid
+     parallel,
+Done.
+
+Preparing mesh for display...
+Done.
+
+Reading from ALI-DESKTOP:"D:/HPC Workshop/Ansys Cases/parametric_mixer/parametric_ansys_project/Static_Mixer.dat.h5" in NODE0 mode ...
+
+
+  Reading results.
+Parallel variables...
+Done.
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame10(Parametric)*Table1*Table3(Study)*PushButton1(Initialize)")
+(cx-gui-do cx-activate-item "Question*OK")
+(cx-gui-do cx-set-file-dialog-entries "Select File" '( "Static_Mixer.flprj") "Project files (*.flprj )")
+(cx-gui-do cx-activate-item "Question*Cancel")
+(cx-gui-do cx-activate-item "MenuBar*ReadSubMenu*Static_Mixer")
+Multicore SMT processors detected. Processor affinity set!
+
+       Clearing partially read grid.
+
+Reading from ALI-DESKTOP:"D:/HPC Workshop/Ansys Cases/parametric_mixer/parametric_ansys_project/Static_Mixer.cas.h5" in NODE0 mode ...
+  Reading mesh ...
+       22771 cells,     1 cell zone  ...
+          22771 polyhedra cells,  zone id: 97
+      119140 faces,     5 face zones ...
+         114959 polygonal interior faces,  zone id: 96
+           3873 polygonal wall faces,  zone id: 20
+            104 polygonal pressure-outlet faces,  zone id: 19
+            103 polygonal velocity-inlet faces,  zone id: 18
+            101 polygonal velocity-inlet faces,  zone id: 17
+       82247 nodes,     1 node zone  ...
+Warning: reading 4 partition grid onto 1 compute node machine.
+         Combining every 4 partitions.
+  Done.
+
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	interior--fluid
+	wall
+	outlet
+	inlet2
+	inlet1
+	fluid
+     parallel,
+Done.
+
+Preparing mesh for display...
+Done.
+
+Reading from ALI-DESKTOP:"D:/HPC Workshop/Ansys Cases/parametric_mixer/parametric_ansys_project/Static_Mixer.dat.h5" in NODE0 mode ...
+
+
+  Reading results.
+Parallel variables...
+Done.
+(cx-gui-do cx-activate-item "MenuBar*Parametric ProjectSubMenu*Open...")
+(cx-gui-do cx-set-file-dialog-entries "Select File" '( "Static_Mixer.flprj") "Project files (*.flprj *.flprz )")
+Resetting session...Resetting session...Done(cx-gui-do cx-activate-item "Question*OK")
+(cx-gui-do cx-activate-tab-index "Parametric Study*Table1*Frame1*Table2*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Parametric Study*Table1*Frame1*Table2*Frame1" 1)
+(cx-gui-do cx-activate-tab-index "Parametric Study*Table1*Frame1*Table2*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Parametric Study*Table1*Frame1*Table2*Frame1" 2)
+(cx-gui-do cx-activate-tab-index "Parametric Study*Table1*Frame1*Table2*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Parametric Study*Table1*Frame1*Table2*Frame1" 3)
+(cx-gui-do cx-activate-tab-index "Parametric Study*Table1*Frame1*Table2*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Parametric Study*Table1*Frame1*Table2*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Parametric Study*Table1*Frame1*Table2*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Parametric Study*Table1*Frame1*Table2*Frame1" 0)
+(syncdir "D:/HPC Workshop/Ansys Cases/parametric_mixer/parametric_ansys_project/Static_Mixer.cffdb\Static_Mixer-Solve\BaseCases")()
+Multicore SMT processors detected. Processor affinity set!
+
+       Clearing partially read grid.
+
+Reading from ALI-DESKTOP:"D:/HPC Workshop/Ansys Cases/parametric_mixer/parametric_ansys_project/Static_Mixer.cffdb\Static_Mixer-Solve\DP5\Static_Mixer.cas.h5" in NODE0 mode ...
+  Reading mesh ...
+       22771 cells,     1 cell zone  ...
+          22771 polyhedra cells,  zone id: 97
+      119140 faces,     5 face zones ...
+         114959 polygonal interior faces,  zone id: 96
+           3873 polygonal wall faces,  zone id: 20
+            104 polygonal pressure-outlet faces,  zone id: 19
+            103 polygonal velocity-inlet faces,  zone id: 18
+            101 polygonal velocity-inlet faces,  zone id: 17
+       82247 nodes,     1 node zone  ...
+Warning: reading 4 partition grid onto 1 compute node machine.
+         Combining every 4 partitions.
+  Done.
+
+
+Building...
+     mesh
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	interior--fluid
+	wall
+	outlet
+	inlet2
+	inlet1
+	fluid
+     parallel,
+Done.
+
+Preparing mesh for display...
+Done.
+
+Reading from ALI-DESKTOP:"D:/HPC Workshop/Ansys Cases/parametric_mixer/parametric_ansys_project/Static_Mixer.cffdb\Static_Mixer-Solve\DP5\Static_Mixer.dat.h5" in NODE0 mode ...
+
+
+  Reading results.
+Parallel variables...
+Done.
+(syncdir "D:/HPC Workshop/Ansys Cases/parametric_mixer/parametric_ansys_project/Static_Mixer.cffdb/Static_Mixer-Solve/DP5")()
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame10(Parametric)*Table1*Table3(Simulation Report)*PushButton3(Parametric Report)")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Parametric Report"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Parametric Report"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Parametric Report"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table2*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Parametric Report"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Current Design Point Report"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Current Design Point Report"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table2*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Current Design Point Report"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Parametric Report"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Parametric Report"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table2*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Parametric Report"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Design Point Report Settings"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Design Point Report Settings"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table2*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Design Point Report Settings"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Parametric Report"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Parametric Report"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Parametric Report"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table2*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Parametric Report"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Design Point Report Settings"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Design Point Report Settings"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table2*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Design Point Report Settings"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Design Point Report Settings"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Parametric Report"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Parametric Report"))
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Parametric Report"))
+(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table2*List_Tree2")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Parametric Reports|Parametric Report"))
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame10(Parametric)*Table1*Table3(Comparison Plot)*PushButton1(Create New)")
+(cx-gui-do cx-set-text-entry "Parametric Plots*Table1*TextEntry2" "exit temp vs inlet vel")
+(cx-gui-do cx-activate-item "Parametric Plots*Table1*TextEntry2")
+(cx-gui-do cx-set-list-selections "Parametric Plots*Table1*DropDownList3(X Axis)" '( 3))
+(cx-gui-do cx-activate-item "Parametric Plots*Table1*DropDownList3(X Axis)")
+(cx-gui-do cx-set-list-selections "Parametric Plots*Table1*DropDownList4(Y Axis)" '( 2))
+(cx-gui-do cx-activate-item "Parametric Plots*Table1*DropDownList4(Y Axis)")
+(cx-gui-do cx-set-list-selections "Parametric Plots*Table1*DropDownList3(X Axis)" '( 2))
+(cx-gui-do cx-activate-item "Parametric Plots*Table1*DropDownList3(X Axis)")
+(cx-gui-do cx-set-list-selections "Parametric Plots*Table1*DropDownList4(Y Axis)" '( 5))
+(cx-gui-do cx-activate-item "Parametric Plots*Table1*DropDownList4(Y Axis)")
+(cx-gui-do cx-activate-item "Parametric Plots*Table1*PushButton5(Create)")
+(cx-gui-do cx-activate-tab-index "Parametric Study*Table1*Frame1*Table2*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Parametric Study*Table1*Frame1*Table2*Frame1" 0)
+(cx-gui-do cx-activate-item "Parametric Plots*PanelButtons*PushButton1(Close)")
+(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table2*List_Tree2" (list "Parametric Studies|Static_Mixer-Solve (Current)|Plots|exit temp vs inlet vel"))
+(cx-gui-do cx-activate-tab-index "Parametric Study*Table1*Frame1*Table2*Frame1" 1)
+(cx-gui-do cx-activate-tab-index "Parametric Study*Table1*Frame1*Table2*Frame1" 0)
+(cx-gui-do cx-activate-item "MenuBar*WriteSubMenu*Case & Data...")
+(cx-gui-do cx-set-file-dialog-entries "Select File" '( "Static_Mixer.cas.h5") "CFF Case/Data Files (*.cas.h5 *.dat.h5 )")
+(cx-gui-do cx-activate-item "Question*OK")
+
+Writing to ALI-DESKTOP:"D:/HPC Workshop/Ansys Cases/parametric_mixer/parametric_ansys_project/Static_Mixer.cffdb/Static_Mixer-Solve/DP5/Static_Mixer.cas.h5" in NODE0 mode and compression level 1 ...
+Grouping cells for Laplace smoothing ...
+       22771 cells,     1 zone  ...
+      119140 faces,     5 zones ...
+       82247 nodes,     1 zone  ...
+  Done.
+Done.
+
+Writing to ALI-DESKTOP:"D:/HPC Workshop/Ansys Cases/parametric_mixer/parametric_ansys_project/Static_Mixer.cffdb/Static_Mixer-Solve/DP5/Static_Mixer.dat.h5" in NODE0 mode and compression level 1 ...
+  Writing results.
+Done.
+/exit y
+
+Posting ANSYS Product Improvement Program performance data 
+Done.
+(cx-gui-do cx-activate-item "Question*OK")
+Auto-Transcript Stop Time:  19:39:56, 12 Aug 2024 Pakistan Standard Time 
+Total Transcript Time: 7 Hour 3 Minute 17 Second.

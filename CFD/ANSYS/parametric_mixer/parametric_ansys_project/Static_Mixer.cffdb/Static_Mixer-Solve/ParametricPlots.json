@@ -1,0 +1,24 @@
+{
+    "ParametricPlots": {
+        "version": "24.1",
+        "ROOT": {
+            "Plot:Plot1": {
+                "Name": "exit temp vs inlet vel",
+                "Type": "XY",
+                "Updated": "true",
+                "XInput": "inlet1_vel",
+                "YInput": "outlet-temp-avg-op",
+                "_name_": "exit temp vs inlet vel"
+            },
+            "PlotsManager": {
+                "ActivePlot": "exit temp vs inlet vel",
+                "Children": [
+                    "exit temp vs inlet vel"
+                ]
+            },
+            "StatusManager": {
+                "ActiveTranscriptDP": "DP1"
+            }
+        }
+    }
+}

@@ -1,0 +1,404 @@
+<Project type="object" class="PFolder">
+    <URL class="string" value=""/>
+    <Metadata type="object" class="ansys::Project::MetadataHoof">
+        <FormatVersion class="int" value="2"/>
+        <ReleaseID class="string" value="24.1"/>
+        <Subclass class="string" value="SimProject"/>
+        <ProjectStoragePolicy::FolderEnabled class="string" value="true"/>
+        <ProjectStoragePolicy::FolderName class="string" value=""/>
+        <ProjectStoragePolicy::FolderSuffix class="string" value=".cffdb"/>
+        <ProjectStoragePolicy::SimFolder class="string" value=""/>
+        <ProjectType class="string" value="SimProject"/>
+        <CurrentSimulation class="string" value="LINK:Static_Mixer-Solve/"/>
+        <isParametricProject class="string" value="True"/>
+        <ProjectCreatedIn class="double" value="24.1"/>
+        <Project::displayColumns class="string" value="Name"/>
+        <Project::displayAllFiles class="int" value="0"/>
+        <Project::displayHidden class="int" value="0"/>
+        <Project::displayFilenames class="int" value="0"/>
+        <Project::displaySorted class="int" value="0"/>
+        <Project::sortColumn class="int" value="0"/>
+    </Metadata>
+    <Static_Mixer-Solve type="object" class="PFolder">
+        <URL class="string" value="./Static_Mixer-Solve/"/>
+        <Subclass class="string" value="Simulation"/>
+        <Metadata type="object" class="ansys::Project::MetadataHoof">
+            <SimulationType class="string" value="ANSYS_FLUENT"/>
+            <MainDataType class="string" value="fluent-dat"/>
+            <CurrentRun class="string" value="LINK:DP5/"/>
+            <PItem::displayOrder class="string" value="BaseCases,Base DP,DP1,DP2,DP3,DP4,DP5"/>
+            <inlet1_vel-Unit class="string" value="[m/s]"/>
+            <inlet1_temp-Unit class="string" value="[K]"/>
+            <inlet2_vel-Unit class="string" value="[m/s]"/>
+            <inlet2_temp-Unit class="string" value="[K]"/>
+            <outlet-temp-avg-op-Unit class="string" value="[K]"/>
+            <UpdateMethod class="string" value="Sequential"/>
+            <ConcurrentJobs class="int" value="2"/>
+            <ConcurrentCores class="int" value="4"/>
+            <LicenseType class="string" value="Solver Licenses"/>
+            <oSLLicenseType class="string" value="None"/>
+            <oSLLicenses class="int" value="1"/>
+            <DPCreationMethod class="string" value="Manual"/>
+            <AutoMeshMorphUpdate class="string" value="True"/>
+        </Metadata>
+        <Static_Mixer.cas.h5 type="object" class="PFile">
+            <URL class="string" value="./Static_Mixer.cas.h5"/>
+            <Metadata type="object" class="ansys::Project::MetadataHoof">
+                <PItem::FileTime class="int" value="649663641"/>
+                <DataType class="string" value="Case"/>
+                <CaseType class="string" value="fluent-cas"/>
+                <VisibilityMode class="string" value="Solver"/>
+            </Metadata>
+        </Static_Mixer.cas.h5>
+        <Input type="object" class="PFolder">
+            <URL class="string" value=""/>
+            <Metadata type="object" class="ansys::Project::MetadataHoof">
+                <PItem::Hidden class="int" value="1"/>
+            </Metadata>
+            <Case type="object" class="PLink">
+                <Target class="string" value="/Static_Mixer-Solve/Static_Mixer.cas.h5"/>
+                <Metadata type="object" class="ansys::Project::MetadataHoof"/>
+            </Case>
+        </Input>
+        <Base_DP type="object" class="PFolder" displayName="Base DP">
+            <URL class="string" value="./Base DP/"/>
+            <Subclass class="string" value="Run"/>
+            <Metadata type="object" class="ansys::Project::MetadataHoof">
+                <Run::OutputType class="string" value="Simple"/>
+                <inlet1_temp-INPUT class="double" value="300"/>
+                <inlet1_vel-INPUT class="double" value="5"/>
+                <inlet2_temp-INPUT class="double" value="350"/>
+                <inlet2_vel-INPUT class="double" value="10"/>
+                <Run::OutputCounter class="int" value="1"/>
+                <Run::CurrentOutput class="string" value="LINK:Solver Files/"/>
+            </Metadata>
+            <Solver_Files type="object" class="PFolder" displayName="Solver Files">
+                <URL class="string" value=""/>
+                <Subclass class="string" value="Output"/>
+                <Metadata type="object" class="ansys::Project::MetadataHoof">
+                    <index class="int" value="1"/>
+                    <WriteData class="string" value="True"/>
+                    <GenerateSimReportData class="string" value="True"/>
+                    <isCurrent class="string" value="No"/>
+                    <Status class="string" value="Updated : Converged"/>
+                    <outlet-temp-avg-op-OUTPUT class="double" value="333.33864"/>
+                </Metadata>
+                <Static_Mixer.cas.h5 type="object" class="PFile">
+                    <URL class="string" value="./Static_Mixer.cas.h5"/>
+                    <Metadata type="object" class="ansys::Project::MetadataHoof">
+                        <PItem::FileTime class="int" value="649663646"/>
+                        <DataType class="string" value="Case"/>
+                        <CaseType class="string" value="fluent-cas"/>
+                    </Metadata>
+                </Static_Mixer.cas.h5>
+                <Static_Mixer.dat.h5 type="object" class="PFile">
+                    <URL class="string" value="./Static_Mixer.dat.h5"/>
+                    <Metadata type="object" class="ansys::Project::MetadataHoof">
+                        <PItem::FileTime class="int" value="649663648"/>
+                        <DataType class="string" value="Result"/>
+                        <CaseType class="string" value="fluent-dat"/>
+                    </Metadata>
+                </Static_Mixer.dat.h5>
+            </Solver_Files>
+        </Base_DP>
+        <BaseCases type="object" class="PFolder">
+            <URL class="string" value="./BaseCases/"/>
+            <Metadata type="object" class="ansys::Project::MetadataHoof"/>
+            <Static_Mixer.cas.h5 type="object" class="PFile">
+                <URL class="string" value="./Static_Mixer.cas.h5"/>
+                <Metadata type="object" class="ansys::Project::MetadataHoof">
+                    <PItem::FileTime class="int" value="649663644"/>
+                </Metadata>
+            </Static_Mixer.cas.h5>
+        </BaseCases>
+        <Simulation_Reports type="object" class="PFolder">
+            <URL class="string" value="./Simulation_Reports/"/>
+            <Metadata type="object" class="ansys::Project::MetadataHoof"/>
+            <report_state.fsrt type="object" class="PFile">
+                <URL class="string" value="./report_state.fsrt"/>
+                <Metadata type="object" class="ansys::Project::MetadataHoof">
+                    <PItem::FileTime class="int" value="0"/>
+                </Metadata>
+            </report_state.fsrt>
+        </Simulation_Reports>
+        <DP1 type="object" class="PFolder">
+            <URL class="string" value="./DP1/"/>
+            <Subclass class="string" value="Run"/>
+            <Metadata type="object" class="ansys::Project::MetadataHoof">
+                <Run::OutputType class="string" value="Simple"/>
+                <Run::OutputCounter class="int" value="1"/>
+                <Run::CurrentOutput class="string" value="LINK:Solver Files/"/>
+                <inlet1_temp-INPUT class="double" value="300"/>
+                <inlet1_vel-INPUT class="double" value="6"/>
+                <inlet2_temp-INPUT class="double" value="350"/>
+                <inlet2_vel-INPUT class="double" value="10"/>
+            </Metadata>
+            <Solver_Files type="object" class="PFolder" displayName="Solver Files">
+                <URL class="string" value=""/>
+                <Subclass class="string" value="Output"/>
+                <Metadata type="object" class="ansys::Project::MetadataHoof">
+                    <index class="int" value="1"/>
+                    <Status class="string" value="Updated : Converged"/>
+                    <WriteData class="string" value="True"/>
+                    <GenerateSimReportData class="string" value="True"/>
+                    <isCurrent class="string" value="No"/>
+                    <outlet-temp-avg-op-OUTPUT class="double" value="331.257181"/>
+                </Metadata>
+                <outlet-temp-avg-rfile.out type="object" class="PFile">
+                    <URL class="string" value="./outlet-temp-avg-rfile.out"/>
+                    <Metadata type="object" class="ansys::Project::MetadataHoof">
+                        <PItem::FileTime class="int" value="649705410"/>
+                    </Metadata>
+                </outlet-temp-avg-rfile.out>
+                <Static_Mixer.cas.h5 type="object" class="PFile">
+                    <URL class="string" value="./Static_Mixer.cas.h5"/>
+                    <Metadata type="object" class="ansys::Project::MetadataHoof">
+                        <PItem::FileTime class="int" value="649705555"/>
+                        <DataType class="string" value="Case"/>
+                        <CaseType class="string" value="fluent-cas"/>
+                    </Metadata>
+                </Static_Mixer.cas.h5>
+                <Static_Mixer.dat.h5 type="object" class="PFile">
+                    <URL class="string" value="./Static_Mixer.dat.h5"/>
+                    <Metadata type="object" class="ansys::Project::MetadataHoof">
+                        <PItem::FileTime class="int" value="649705556"/>
+                        <DataType class="string" value="Result"/>
+                        <CaseType class="string" value="fluent-dat"/>
+                    </Metadata>
+                </Static_Mixer.dat.h5>
+                <Static_Mixer.trn type="object" class="PFile">
+                    <URL class="string" value="./Auto-generated-transcript.trn"/>
+                    <Metadata type="object" class="ansys::Project::MetadataHoof">
+                        <PItem::FileTime class="int" value="649705556"/>
+                    </Metadata>
+                </Static_Mixer.trn>
+            </Solver_Files>
+        </DP1>
+        <DP2 type="object" class="PFolder">
+            <URL class="string" value="./DP2/"/>
+            <Subclass class="string" value="Run"/>
+            <Metadata type="object" class="ansys::Project::MetadataHoof">
+                <Run::OutputType class="string" value="Simple"/>
+                <Run::OutputCounter class="int" value="1"/>
+                <Run::CurrentOutput class="string" value="LINK:Solver Files/"/>
+                <inlet1_temp-INPUT class="double" value="300"/>
+                <inlet1_vel-INPUT class="double" value="7"/>
+                <inlet2_temp-INPUT class="double" value="350"/>
+                <inlet2_vel-INPUT class="double" value="10"/>
+            </Metadata>
+            <Solver_Files type="object" class="PFolder" displayName="Solver Files">
+                <URL class="string" value=""/>
+                <Subclass class="string" value="Output"/>
+                <Metadata type="object" class="ansys::Project::MetadataHoof">
+                    <index class="int" value="1"/>
+                    <Status class="string" value="Updated : Converged"/>
+                    <WriteData class="string" value="True"/>
+                    <GenerateSimReportData class="string" value="True"/>
+                    <isCurrent class="string" value="No"/>
+                    <outlet-temp-avg-op-OUTPUT class="double" value="329.417513"/>
+                </Metadata>
+                <outlet-temp-avg-rfile.out type="object" class="PFile">
+                    <URL class="string" value="./outlet-temp-avg-rfile.out"/>
+                    <Metadata type="object" class="ansys::Project::MetadataHoof">
+                        <PItem::FileTime class="int" value="649705727"/>
+                    </Metadata>
+                </outlet-temp-avg-rfile.out>
+                <Static_Mixer.cas.h5 type="object" class="PFile">
+                    <URL class="string" value="./Static_Mixer.cas.h5"/>
+                    <Metadata type="object" class="ansys::Project::MetadataHoof">
+                        <PItem::FileTime class="int" value="649705921"/>
+                        <DataType class="string" value="Case"/>
+                        <CaseType class="string" value="fluent-cas"/>
+                    </Metadata>
+                </Static_Mixer.cas.h5>
+                <Static_Mixer.dat.h5 type="object" class="PFile">
+                    <URL class="string" value="./Static_Mixer.dat.h5"/>
+                    <Metadata type="object" class="ansys::Project::MetadataHoof">
+                        <PItem::FileTime class="int" value="649705922"/>
+                        <DataType class="string" value="Result"/>
+                        <CaseType class="string" value="fluent-dat"/>
+                    </Metadata>
+                </Static_Mixer.dat.h5>
+                <Static_Mixer.trn type="object" class="PFile">
+                    <URL class="string" value="./Auto-generated-transcript.trn"/>
+                    <Metadata type="object" class="ansys::Project::MetadataHoof">
+                        <PItem::FileTime class="int" value="649705922"/>
+                    </Metadata>
+                </Static_Mixer.trn>
+            </Solver_Files>
+        </DP2>
+        <DP3 type="object" class="PFolder">
+            <URL class="string" value="./DP3/"/>
+            <Subclass class="string" value="Run"/>
+            <Metadata type="object" class="ansys::Project::MetadataHoof">
+                <Run::OutputType class="string" value="Simple"/>
+                <Run::OutputCounter class="int" value="1"/>
+                <Run::CurrentOutput class="string" value="LINK:Solver Files/"/>
+                <inlet1_temp-INPUT class="double" value="300"/>
+                <inlet1_vel-INPUT class="double" value="8"/>
+                <inlet2_temp-INPUT class="double" value="350"/>
+                <inlet2_vel-INPUT class="double" value="10"/>
+            </Metadata>
+            <Solver_Files type="object" class="PFolder" displayName="Solver Files">
+                <URL class="string" value=""/>
+                <Subclass class="string" value="Output"/>
+                <Metadata type="object" class="ansys::Project::MetadataHoof">
+                    <index class="int" value="1"/>
+                    <Status class="string" value="Updated : Converged"/>
+                    <WriteData class="string" value="True"/>
+                    <GenerateSimReportData class="string" value="True"/>
+                    <isCurrent class="string" value="No"/>
+                    <outlet-temp-avg-op-OUTPUT class="double" value="327.782039"/>
+                </Metadata>
+                <outlet-temp-avg-rfile.out type="object" class="PFile">
+                    <URL class="string" value="./outlet-temp-avg-rfile.out"/>
+                    <Metadata type="object" class="ansys::Project::MetadataHoof">
+                        <PItem::FileTime class="int" value="649706081"/>
+                    </Metadata>
+                </outlet-temp-avg-rfile.out>
+                <Static_Mixer.cas.h5 type="object" class="PFile">
+                    <URL class="string" value="./Static_Mixer.cas.h5"/>
+                    <Metadata type="object" class="ansys::Project::MetadataHoof">
+                        <PItem::FileTime class="int" value="649706229"/>
+                        <DataType class="string" value="Case"/>
+                        <CaseType class="string" value="fluent-cas"/>
+                    </Metadata>
+                </Static_Mixer.cas.h5>
+                <Static_Mixer.dat.h5 type="object" class="PFile">
+                    <URL class="string" value="./Static_Mixer.dat.h5"/>
+                    <Metadata type="object" class="ansys::Project::MetadataHoof">
+                        <PItem::FileTime class="int" value="649706231"/>
+                        <DataType class="string" value="Result"/>
+                        <CaseType class="string" value="fluent-dat"/>
+                    </Metadata>
+                </Static_Mixer.dat.h5>
+                <Static_Mixer.trn type="object" class="PFile">
+                    <URL class="string" value="./Auto-generated-transcript.trn"/>
+                    <Metadata type="object" class="ansys::Project::MetadataHoof">
+                        <PItem::FileTime class="int" value="649706231"/>
+                    </Metadata>
+                </Static_Mixer.trn>
+            </Solver_Files>
+        </DP3>
+        <DP4 type="object" class="PFolder">
+            <URL class="string" value="./DP4/"/>
+            <Subclass class="string" value="Run"/>
+            <Metadata type="object" class="ansys::Project::MetadataHoof">
+                <Run::OutputType class="string" value="Simple"/>
+                <Run::OutputCounter class="int" value="1"/>
+                <Run::CurrentOutput class="string" value="LINK:Solver Files/"/>
+                <inlet1_temp-INPUT class="double" value="300"/>
+                <inlet1_vel-INPUT class="double" value="9"/>
+                <inlet2_temp-INPUT class="double" value="350"/>
+                <inlet2_vel-INPUT class="double" value="10"/>
+            </Metadata>
+            <Solver_Files type="object" class="PFolder" displayName="Solver Files">
+                <URL class="string" value=""/>
+                <Subclass class="string" value="Output"/>
+                <Metadata type="object" class="ansys::Project::MetadataHoof">
+                    <index class="int" value="1"/>
+                    <Status class="string" value="Updated : Converged"/>
+                    <WriteData class="string" value="True"/>
+                    <GenerateSimReportData class="string" value="True"/>
+                    <isCurrent class="string" value="No"/>
+                    <outlet-temp-avg-op-OUTPUT class="double" value="326.318124"/>
+                </Metadata>
+                <outlet-temp-avg-rfile.out type="object" class="PFile">
+                    <URL class="string" value="./outlet-temp-avg-rfile.out"/>
+                    <Metadata type="object" class="ansys::Project::MetadataHoof">
+                        <PItem::FileTime class="int" value="649706367"/>
+                    </Metadata>
+                </outlet-temp-avg-rfile.out>
+                <Static_Mixer.cas.h5 type="object" class="PFile">
+                    <URL class="string" value="./Static_Mixer.cas.h5"/>
+                    <Metadata type="object" class="ansys::Project::MetadataHoof">
+                        <PItem::FileTime class="int" value="649706514"/>
+                        <DataType class="string" value="Case"/>
+                        <CaseType class="string" value="fluent-cas"/>
+                    </Metadata>
+                </Static_Mixer.cas.h5>
+                <Static_Mixer.dat.h5 type="object" class="PFile">
+                    <URL class="string" value="./Static_Mixer.dat.h5"/>
+                    <Metadata type="object" class="ansys::Project::MetadataHoof">
+                        <PItem::FileTime class="int" value="649706515"/>
+                        <DataType class="string" value="Result"/>
+                        <CaseType class="string" value="fluent-dat"/>
+                    </Metadata>
+                </Static_Mixer.dat.h5>
+                <Static_Mixer.trn type="object" class="PFile">
+                    <URL class="string" value="./Auto-generated-transcript.trn"/>
+                    <Metadata type="object" class="ansys::Project::MetadataHoof">
+                        <PItem::FileTime class="int" value="649706515"/>
+                    </Metadata>
+                </Static_Mixer.trn>
+            </Solver_Files>
+        </DP4>
+        <DP5 type="object" class="PFolder">
+            <URL class="string" value="./DP5/"/>
+            <Subclass class="string" value="Run"/>
+            <Metadata type="object" class="ansys::Project::MetadataHoof">
+                <Run::OutputType class="string" value="Simple"/>
+                <Run::OutputCounter class="int" value="1"/>
+                <Run::CurrentOutput class="string" value="LINK:Solver Files/"/>
+                <inlet1_temp-INPUT class="double" value="300"/>
+                <inlet1_vel-INPUT class="double" value="10"/>
+                <inlet2_temp-INPUT class="double" value="350"/>
+                <inlet2_vel-INPUT class="double" value="10"/>
+            </Metadata>
+            <Solver_Files type="object" class="PFolder" displayName="Solver Files">
+                <URL class="string" value=""/>
+                <Subclass class="string" value="Output"/>
+                <Metadata type="object" class="ansys::Project::MetadataHoof">
+                    <index class="int" value="1"/>
+                    <Status class="string" value="Updated : Converged"/>
+                    <WriteData class="string" value="True"/>
+                    <GenerateSimReportData class="string" value="True"/>
+                    <isCurrent class="string" value="Yes"/>
+                    <outlet-temp-avg-op-OUTPUT class="double" value="324.999923"/>
+                </Metadata>
+                <outlet-temp-avg-rfile.out type="object" class="PFile">
+                    <URL class="string" value="./outlet-temp-avg-rfile.out"/>
+                    <Metadata type="object" class="ansys::Project::MetadataHoof">
+                        <PItem::FileTime class="int" value="649706652"/>
+                    </Metadata>
+                </outlet-temp-avg-rfile.out>
+                <Static_Mixer.cas.h5 type="object" class="PFile">
+                    <URL class="string" value="./Static_Mixer.cas.h5"/>
+                    <Metadata type="object" class="ansys::Project::MetadataHoof">
+                        <PItem::FileTime class="int" value="649706802"/>
+                        <DataType class="string" value="Case"/>
+                        <CaseType class="string" value="fluent-cas"/>
+                    </Metadata>
+                </Static_Mixer.cas.h5>
+                <Static_Mixer.dat.h5 type="object" class="PFile">
+                    <URL class="string" value="./Static_Mixer.dat.h5"/>
+                    <Metadata type="object" class="ansys::Project::MetadataHoof">
+                        <PItem::FileTime class="int" value="649706804"/>
+                        <DataType class="string" value="Result"/>
+                        <CaseType class="string" value="fluent-dat"/>
+                    </Metadata>
+                </Static_Mixer.dat.h5>
+                <Static_Mixer.trn type="object" class="PFile">
+                    <URL class="string" value="./Auto-generated-transcript.trn"/>
+                    <Metadata type="object" class="ansys::Project::MetadataHoof">
+                        <PItem::FileTime class="int" value="649706804"/>
+                    </Metadata>
+                </Static_Mixer.trn>
+            </Solver_Files>
+        </DP5>
+        <DesignPoints.csv type="object" class="PFile">
+            <URL class="string" value="./DesignPoints.csv"/>
+            <Metadata type="object" class="ansys::Project::MetadataHoof">
+                <PItem::FileTime class="int" value="0"/>
+                <PItem::Hidden class="int" value="1"/>
+            </Metadata>
+        </DesignPoints.csv>
+        <ParametricPlots.json type="object" class="PFile">
+            <URL class="string" value="./ParametricPlots.json"/>
+            <Metadata type="object" class="ansys::Project::MetadataHoof">
+                <PItem::FileTime class="int" value="649663654"/>
+                <PItem::Hidden class="int" value="1"/>
+            </Metadata>
+        </ParametricPlots.json>
+    </Static_Mixer-Solve>
+</Project>

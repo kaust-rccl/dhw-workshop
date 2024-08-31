@@ -1,0 +1,163 @@
+Auto-Transcript Start Time:  16:49:27, 30 Jul 2024 Pakistan Standard Time 
+Current Directory: "C:\Users\Dell\OneDrive\Desktop\HPC Workshop\Hypersonic flow\Dr.Ammar\reentry_capsule"
+
+              Welcome to ANSYS Fluent 2024 R1
+
+              Copyright 1987-2024 ANSYS, Inc. All Rights Reserved.
+              Unauthorized use, distribution or duplication is prohibited.
+              This product is subject to U.S. laws governing export and re-export.
+              For full Legal Notice, see documentation.
+
+Build Time: Nov 22 2023 10:31:01 EST  Build Id: 10184  
+ 
+Connected License Server List:	1055@localhost
+Host spawning Node 0 on machine "ALI-DESKTOP" (win64).
+
+-------------------------------------------------------------------------------
+ID    Hostname     Core  O.S.         PID    Vendor                          
+-------------------------------------------------------------------------------
+n3    ALI-DESKTOP  4/8  Windows-x64  6012   Intel(R) Core(TM) i7-8665U      
+n2    ALI-DESKTOP  3/8  Windows-x64  9916   Intel(R) Core(TM) i7-8665U      
+n1    ALI-DESKTOP  2/8  Windows-x64  8872   Intel(R) Core(TM) i7-8665U      
+n0*   ALI-DESKTOP  1/8  Windows-x64  2596   Intel(R) Core(TM) i7-8665U      
+host  ALI-DESKTOP       Windows-x64  15824  Intel(R) Core(TM) i7-8665U      
+
+MPI Option Selected: intel
+Selected system interconnect: default
+-------------------------------------------------------------------------------
+
+Cleanup script file is C:\\Users\\Dell\\OneDrive\\Desktop\\HPC Workshop\\Hypersonic flow\\Dr.Ammar\\reentry_capsule\\cleanup-fluent-ALI-DESKTOP-15824.bat
+(cx-gui-do cx-activate-tab-index "NavigationPane*Frame1(TreeTab)" 0)
+
+Posting ANSYS Product Improvement Program startup data
+Done.
+Reading "C:/Users/Dell/OneDrive/Desktop/HPC Workshop/Hypersonic flow/Dr.Ammar/reentry_capsule/CapsuleFlow.msh.h5" ...
+3D mesh
+nodes: 574810
+edges: 729
+faces: 809623 
+cells: 152367 
+reading 4 node zones
+reading 7 edge zones
+reading 5 face zones
+reading 1 cell zones
+reading boundary layer flags...
+generating pointers...done.
+extracting boundary entities...
+ 33144 boundary nodes.
+ 11333 boundary faces.
+ 4 boundary face zones.
+done.
+generating cells...done.
+analyzing boundary connectivity...done.
+
+Meshing> (newline)
+
+
+Meshing> (cx-gui-do cx-activate-item "Key Behavioral Changes*PanelButtons*PushButton1(OK)")
+(cx-use-window-id 51)
+selected 2 zone(s).
+zone id: 28, name: sym, type: symmetry, count: 5573
+zone id: 27, name: outflow, type: pressure-outlet, count: 1049
+(cx-use-window-id 51)
+zone not found.
+(cx-use-window-id 51)
+zone not found.
+(cx-gui-do cx-activate-item "ToolBar*Pointer*rotate")
+(cx-use-window-id 51)
+(cx-set-camera-relative '(88.6344 -112.01 -18.3378) '(0 0 0) '(0.377693 0.248153 0.2307) 0 0)
+(cx-use-window-id 51)
+(cx-set-camera-relative '(-60.8374 61.0367 -243.93) '(0 0 0) '(-0.555069 -0.226383 0.16977) 0 0)
+(cx-use-window-id 51)
+(cx-set-camera-relative '(-189.052 -89.8947 -85.3065) '(0 0 0) '(-0.247998 -0.41356 0.309976) 0 0)
+(cx-use-window-id 51)
+zone not found.
+(cx-use-window-id 51)
+zone id: 28, name: sym, type: symmetry, count: 5573
+(cx-gui-do cx-activate-item "ToolBar*Mesh Display*fl_mesh_svg_graphics_toolbar")
+(cx-gui-do cx-activate-tab-index "Display Grid*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Display Grid*Frame1" 1)
+(cx-gui-do cx-activate-tab-index "Display Grid*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Display Grid*Frame1" 2)
+(cx-gui-do cx-activate-tab-index "Display Grid*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Display Grid*Frame1" 3)
+(cx-gui-do cx-activate-tab-index "Display Grid*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Display Grid*Frame1" 4)
+(cx-gui-do cx-activate-tab-index "Display Grid*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Display Grid*Frame1" 5)
+(cx-gui-do cx-activate-tab-index "Display Grid*Frame1" 0)
+(cx-gui-do cx-activate-tab-index "Display Grid*Frame1" 2)
+(cx-gui-do cx-set-list-selections "Display Grid*Frame1*Frame3(Faces)*Table1*Frame4*List1(Face Zones)" '( 0))
+(cx-gui-do cx-activate-item "Display Grid*Frame1*Frame3(Faces)*Table1*Frame4*List1(Face Zones)")
+(cx-gui-do cx-set-list-selections "Display Grid*Frame1*Frame3(Faces)*Table1*Frame4*List1(Face Zones)" '( 0 1))
+(cx-gui-do cx-activate-item "Display Grid*Frame1*Frame3(Faces)*Table1*Frame4*List1(Face Zones)")
+(cx-gui-do cx-set-list-selections "Display Grid*Frame1*Frame3(Faces)*Table1*Frame4*List1(Face Zones)" '( 0 1 2))
+(cx-gui-do cx-activate-item "Display Grid*Frame1*Frame3(Faces)*Table1*Frame4*List1(Face Zones)")
+(cx-gui-do cx-set-list-selections "Display Grid*Frame1*Frame3(Faces)*Table1*Frame4*List1(Face Zones)" '( 0 1 2 3))
+(cx-gui-do cx-activate-item "Display Grid*Frame1*Frame3(Faces)*Table1*Frame4*List1(Face Zones)")
+(cx-gui-do cx-set-list-selections "Display Grid*Frame1*Frame3(Faces)*Table1*Frame4*List1(Face Zones)" '( 0 1 2 3 4))
+(cx-gui-do cx-activate-item "Display Grid*Frame1*Frame3(Faces)*Table1*Frame4*List1(Face Zones)")
+(cx-gui-do cx-activate-item "Display Grid*PanelButtons*PushButton1(OK)")
+(cx-gui-do cx-activate-item "Display Grid*PanelButtons*PushButton2(Cancel)")
+(cx-use-window-id 51)
+(cx-set-camera-relative '(-2.52677 4.43803 1.1059) '(0 0 0) '(0.00732207 -0.00535959 0.0368127) 0 0)
+(cx-use-window-id 51)
+(cx-set-camera-relative '(58.0472 42.282 21.8866) '(0 0 0) '(0.0246706 0.131528 -0.33088) 0 0)
+(cx-use-window-id 51)
+(cx-set-camera-relative '(-25.1145 20.9791 11.5134) '(0 0 0) '(-0.0589398 -0.177526 0.236736) 0 0)
+(cx-use-window-id 51)
+(cx-set-camera-relative '(10.5703 -27.2795 -20.6458) '(0 0 0) '(0.0396004 0.144343 -0.136784) 0 0)
+(cx-use-window-id 51)
+(handle-key "control ??")
+(cx-use-window-id 51)
+(handle-key "control ??")
+(cx-use-window-id 51)
+(handle-key "control ??")
+(cx-use-window-id 51)
+(handle-key "control ??")
+(cx-use-window-id 51)
+(handle-key "control ??")
+(cx-use-window-id 51)
+(handle-key "control ??")
+(cx-use-window-id 51)
+(handle-key "control ??")
+(cx-use-window-id 51)
+(cx-set-camera-relative '(4.14031 6.10874 6.42318) '(0 0 0) '(0.00225848 0.00352767 -0.0549625) 0 0)
+(cx-use-window-id 51)
+(handle-key "control ??")
+(cx-use-window-id 51)
+(cx-set-camera-relative '(18.3878 -22.7273 -7.049) '(0 0 0) '(0.139532 0.18737 -0.177398) 0 0)
+(cx-use-window-id 51)
+(cx-set-camera-relative '(-120.473 18.2473 -10.6287) '(0 0 0) '(-0.0966238 -0.37725 0.661159) 0 0)
+(cx-use-window-id 51)
+(handle-key "control ??")
+(cx-use-window-id 51)
+(handle-key "control ??")
+(cx-use-window-id 51)
+(handle-key "control ??")
+(cx-use-window-id 51)
+(handle-key "control ??")
+(cx-use-window-id 51)
+(cx-set-camera-relative '(0.152802 -1.34815 -0.999908) '(0 0 0) '(-0.00132614 0.00609152 -0.0056991) 0 0)
+(cx-use-window-id 51)
+(cx-set-camera-relative '(9.842 1.02982 -1.87692) '(0 0 0) '(-0.0318146 0.0218763 -0.0839767) 0 0)
+(cx-use-window-id 51)
+(cx-set-camera-relative '(15.4517 -17.0637 -11.2793) '(0 0 0) '(-0.0210589 0.0936498 -0.175483) 0 0)
+(cx-use-window-id 51)
+(cx-set-camera-relative '(10.0788 -18.6217 -6.20222) '(0 0 0) '(0.00319827 0.0500551 -0.142873) 0 0)
+(cx-use-window-id 51)
+(cx-set-camera-relative '(-19.3191 -49.6476 -0.438332) '(0 0 0) '(-0.00184357 -0.00314468 -0.0158361) 0 0)
+(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame2(Task Page)*Table1*Table3(Solution)*PushButton1(Switch to Solution)")
+(cx-gui-do cx-activate-item "Question*OK")
+Cannot switch  mode due to license unavailability or licensing error
+
+No error handler available
+
+Error: Cortex received a fatal signal (SEGMENTATION VIOLATION).
+Error Object: ()
+/exit y
+
+Posting ANSYS Product Improvement Program performance data 
+Done.
+Auto-Transcript Stop Time:  21:50:51, 30 Jul 2024 Pakistan Standard Time 
+Total Transcript Time: 5 Hour 1 Minute 24 Second.
