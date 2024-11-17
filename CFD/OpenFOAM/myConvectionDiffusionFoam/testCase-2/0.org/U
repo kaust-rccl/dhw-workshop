@@ -1,0 +1,47 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  3.0.x                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    location    "0";
+    object      U;
+}
+
+dimensions      [0 1 -1 0 0 0 0];
+
+internalField   uniform (1 1 1);  // Set initial velocity components (vx, vy, vz)
+
+boundaryField
+{
+    inlet
+    {
+        type fixedValue;
+        value uniform (1 1 1);  // Matching vx, vy, vz from Python code
+    }
+
+    outlet
+    {
+        type zeroGradient;
+    }
+
+    frontAndBack
+    {
+        type noSlip;  // Alternatively, you can adjust this to a velocity value if needed.
+    }
+
+    topAndBottom
+    {
+        type noSlip;
+    }
+}
+
+
+
+// ************************************************************************* //
