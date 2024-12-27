@@ -6,12 +6,10 @@
 #SBATCH --tasks-per-node=1
 #SBATCH --cpus-per-task=4
 #SBATCH --time=00:30:00
-#SBATCH --reservation=DS-TRAINING
-#SBATCH --gpus=1
+#SBATCH --partition=cpu
 
-module load dl
-module load pytorch
-module load ray/2.2.0
+module use /scratch/sw/modulefiles
+module load python
 
 
 #Requested number of workers
@@ -26,7 +24,7 @@ fi
 export server_port=$(python -c 'import socket; s=socket.socket(); s.bind(("", 0)); print(s.getsockname()[1]); s.close()')
 export dashboard_port=$(python -c 'import socket; s=socket.socket(); s.bind(("", 0)); print(s.getsockname()[1]); s.close()')
 export tensorboard_port=$(python -c 'import socket; s=socket.socket(); s.bind(("", 0)); print(s.getsockname()[1]); s.close()')
-export node=$(/bin/hostanme -s)
+export node=$(/bin/hostname -i)
 echo "
 Connect to dashboard by creating SSH tunnels. Copy the following command in a new terminal
 and connect to localhost via your browser.
@@ -38,7 +36,7 @@ export TB_TMPDIR=$PWD/tboard/${SLURM_JOBID}
 mkdir -p ${TB_TMPDIR}
 
 export redis_password=${SLURM_JOBID}
-export head_node_ip=$(hostname -I | cut -d " " -f 2)
+export head_node_ip=$(hostname -i)
 export ip_head=${head_node_ip}:${server_port}
 echo "${ip_head} ${redis_password} ${dashboard_port}" > head_node_info
 

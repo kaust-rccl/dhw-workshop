@@ -3,17 +3,13 @@
 #SBATCH --output=%x-%j.out
 #SBATCH --error=%x-%j.out
 #SBATCH --ntasks=1
-#SBATCH --tasks-per-node=1
-#SBATCH --nodes=1
 #SBATCH --cpus-per-task=16
 #SBATCH --time=00:30:00
-#SBATCH --gpus=4
-#SBATCH --gpus-per-node=4
-#SBATCH --reservation=DS-TRAINING
+#SBATCH --gpus-per-node=1
+#SBATCH --partition=gpu
 
-module load dl
-module load pytorch
-module load ray/2.2.0
+module load /scratch/sw/modulefiles
+module load python
 
 export NUM_CPUS_PER_NODE=${SLURM_CPUS_PER_TASK}
 export NUM_GPUS_PER_NODE=${SLURM_GPUS_PER_NODE}
