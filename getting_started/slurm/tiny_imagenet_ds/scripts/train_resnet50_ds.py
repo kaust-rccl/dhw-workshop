@@ -7,7 +7,7 @@ import torch.nn.functional as F
 from torchvision import transforms, datasets, models
 from deepspeed.accelerator import get_accelerator
 from deepspeed.moe.utils import split_params_into_different_moe_groups_for_optimizer
-
+import os
 
 def add_argument():
     parser = argparse.ArgumentParser(description="Tinyimagenet")
@@ -102,7 +102,7 @@ def main(args):
 
 
     # Load or download cifar data.
-    trainset = datasets.ImageFolder("/ibex/reference/CV/tinyimagenet/train",
+    trainset = datasets.ImageFolder(os.path.join(os.environ['DATA_DIR'],"train"),
                          transform=transforms.Compose([
                              transforms.RandomResizedCrop(224),
                              transforms.RandomHorizontalFlip(),
@@ -119,7 +119,7 @@ def main(args):
                                            num_workers=args.num_workers,
                                            pin_memory=True)
         # Load or download cifar data.
-    valset = datasets.ImageFolder("/ibex/reference/CV/tinyimagenet/train",
+    valset = datasets.ImageFolder(os.path.join(os.environ['DATA_DIR'],"val"),
                          transform=transforms.Compose([
                              transforms.RandomResizedCrop(224),
                              transforms.RandomHorizontalFlip(),
