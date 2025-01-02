@@ -6,7 +6,7 @@
 #SBATCH --gpus-per-node=1
 #SBATCH --ntasks=1
 #SBATCH --tasks-per-node=1
-#SBATCH --cpus-per-task=6
+#SBATCH --cpus-per-task=48
 #SBATCH --hint=nomultithread
 #SBATCH --time=00:30:00
 
@@ -16,8 +16,9 @@ scontrol show job ${SLURM_JOBID}
 module use /sw/modulefiles
 module load python
 
+export TRITON_CACHE_DIR=${PWD}/cache
 export EPOCHS=1
-export DATA_DIR="/sw/dataset/tiny-imagenet-200"
+export DATA_DIR="/workspace/datasets/tiny-imagenet-200"
 export OMP_NUM_THREADS=1
 export MAX_JOBS=${SLURM_CPUS_PER_TASK}
 # Getting the node names
@@ -40,14 +41,8 @@ echo "Hostname: $(/bin/hostname)"
 echo "CPU workers: $workers"
 
 start=$(date +%s)
-for (( i=0; i< ${SLURM_NNODES}; i++ ))
-do
-    srun --cpu-bind=cores -n 1 -N 1 -c ${SLURM_CPUS_PER_TASK} -w ${nodes_array[i]} --gpus=${SLURM_GPUS_PER_NODE}  \
-    python -m torch.distributed.launch --use_env --nproc_per_node=${SLURM_GPUS_PER_NODE} --nnodes=${SLURM_NNODES} --node_rank=${i} \
-    --master_addr=${master_ip} --master_port=${MASTER_PORT}  ../scripts/train_resnet50_ds.py  --epochs ${EPOCHS} --num-workers=${SLURM_CPUS_PER_TASK}\
-    --deepspeed --deepspeed_config ./ds_config.json \
-    --log-interval 100 &
-done
-wait
+deepspeed --num_nodes=1 --num_gpus=${ngpus} ../scripts/train_resnet50_ds.py --num-workers=${SLURM_CPUS_PER_TASK} \
+	--deepspeed_config ./ds_config.json \
+	--epochs=1 --log-interval 100 
 end=$(date +%s)
-echo "Elapsed Time: $(($end-$start)) seconds"
+echo "Elapsed Time for ${$SLURM_GPUS} GPUs run on partition ${SLURM_JOB_PARTITION} : $(($end-$start)) seconds"
