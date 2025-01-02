@@ -45,4 +45,4 @@ deepspeed --num_nodes=1 --num_gpus=${ngpus} ../scripts/train_resnet50_ds.py --nu
 	--deepspeed_config ./ds_config.json \
 	--epochs=1 --log-interval 100 
 end=$(date +%s)
-echo "Elapsed Time for ${$SLURM_GPUS} GPUs run on partition ${SLURM_JOB_PARTITION} : $(($end-$start)) seconds"
+echo "Elapsed Time for ${SLURM_GPUS} GPUs run on partition ${SLURM_JOB_PARTITION} : $(($end-$start)) seconds"
