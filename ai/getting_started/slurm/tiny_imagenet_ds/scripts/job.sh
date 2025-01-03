@@ -2,9 +2,9 @@
 
 #SBATCH --job-name=bench-tinyIM-ds
 #SBATCH --partition=a100n       # The partition, as seen in output of sinfo. This chooses the GPU pool
-#SBATCH --gpus=16		# Total number of GPUs
+#SBATCH --gpus=8		# Total number of GPUs
 #SBATCH --gpus-per-node=8	# Number of GPUs per compute node (machine)
-#SBATCH --ntasks=16		# Number of CPU processes lanuching work on each GPU (should be equal to the total number of GPUs)
+#SBATCH --ntasks=8		# Number of CPU processes lanuching work on each GPU (should be equal to the total number of GPUs)
 #SBATCH --tasks-per-node=8      # Number of CPU processes on each compute node (machine) (should be equal to the number of GPUs per node)
 #SBATCH --cpus-per-task=12      # Number of worker processes for Dataloading feeding to each GPU.
 #SBATCH --hint=nomultithread    # Disabling hyperthreading
