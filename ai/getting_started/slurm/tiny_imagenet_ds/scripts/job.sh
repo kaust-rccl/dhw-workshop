@@ -1,21 +1,20 @@
 #!/bin/bash -l
 
 #SBATCH --job-name=bench-tinyIM-ds
-#SBATCH --partition=t4
-#SBATCH --gpus=1
-#SBATCH --gpus-per-node=1
-#SBATCH --ntasks=1
-#SBATCH --tasks-per-node=1
-#SBATCH --cpus-per-task=48
-#SBATCH --hint=nomultithread
-#SBATCH --time=00:30:00
+#SBATCH --partition=a100n       # The partition, as seen in output of sinfo. This chooses the GPU pool
+#SBATCH --gpus=16		# Total number of GPUs
+#SBATCH --gpus-per-node=8	# Number of GPUs per compute node (machine)
+#SBATCH --ntasks=16		# Number of CPU processes lanuching work on each GPU (should be equal to the total number of GPUs)
+#SBATCH --tasks-per-node=8      # Number of CPU processes on each compute node (machine) (should be equal to the number of GPUs per node)
+#SBATCH --cpus-per-task=12      # Number of worker processes for Dataloading feeding to each GPU.
+#SBATCH --hint=nomultithread    # Disabling hyperthreading
+#SBATCH --time=00:30:00	        # Request for time for the job to run and then terminate automatically (HH:MM:SS)
 
 
 scontrol show job ${SLURM_JOBID}
-#rm -rf /home/shaima0d/.cache/torch_extensions/*
 module use /sw/modulefiles
 module load python
-
+module load openmpi
 export TRITON_CACHE_DIR=${PWD}/cache
 export EPOCHS=1
 export DATA_DIR="/workspace/datasets/tiny-imagenet-200"
@@ -26,6 +25,12 @@ nodes=$(scontrol show hostnames "$SLURM_JOB_NODELIST")
 nodes_array=($nodes)
 echo "Node IDs of participating nodes ${nodes_array[*]}"
 
+export HOSTFILE=./hostfile
+rm $HOSTFILE
+for i in ${nodes_array[*]}
+do
+	echo $i slots=${SLURM_GPUS_PER_NODE} >> ${HOSTFILE}
+done
 
 # Get the IP address and set port for MASTER node
 head_node="${nodes_array[0]}"
@@ -41,7 +46,13 @@ echo "Hostname: $(/bin/hostname)"
 echo "CPU workers: $workers"
 
 start=$(date +%s)
-deepspeed --num_nodes=1 --num_gpus=${ngpus} ../scripts/train_resnet50_ds.py --num-workers=${SLURM_CPUS_PER_TASK} \
+deepspeed --hostfile ./hostfile \
+	--launcher SLURM \
+	--launcher_args "\--mpi=pmix" \
+	--num_nodes=${SLURM_NNODES} \
+	--num_gpus=${SLURM_GPUS_PER_NODE} \
+       	../scripts/train_resnet50_ds.py \
+	--num-workers=${SLURM_CPUS_PER_TASK} \
 	--deepspeed_config ./ds_config.json \
 	--epochs=1 --log-interval 100 
 end=$(date +%s)
