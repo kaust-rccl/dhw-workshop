@@ -1,3 +1,0 @@
-mpirun -np 2 python advection_diffusion_mpi.py
-
-srun -n 2 python advection_diffusion_mpi.py
