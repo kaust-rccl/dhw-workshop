@@ -1,4 +1,0 @@
-SOURCE = \
-myConvectionDiffusionFoam.C \
-
-# sources
