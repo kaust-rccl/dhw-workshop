@@ -24,7 +24,7 @@ export nvport=$(python -c 'import socket; s=socket.socket(); s.bind(("", 0)); pr
 nvdashboard $nvport &
 echo "ssh -L $nvport:$(/bin/hostname -s):$nvport $USER@glogin.ibex.kaust.edu.sa"
 
-export BASEDIR=cache
+export BASEDIR=$(echo ${PWD}/cache)
 export HF_HOME=${BASEDIR}
 export HF_METRICS_CACHE=${BASEDIR}/metric
 export TRITON_CACHE_DIR=${BASEDIR}/triton
@@ -35,7 +35,7 @@ export TOKENIZERS_PARALLELISM=false
 rm -rf ${TORCH_EXTENSIONS_DIR}/*
 cd ../scripts
 
-export DS_CONFIG='ds_configs/ds_config_nozero.json'
+export DS_CONFIG='ds_config_nozero.json'
 start=$(date +%s)
 srun -l ./wrapper.sh
 end=$(date +%s)
