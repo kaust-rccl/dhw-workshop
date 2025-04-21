@@ -10,9 +10,7 @@ export LAUNCHER="accelerate launch \
       "
 export SCRIPT="./finetune.py"
 
-export SCRIPT_ARGS=" \
-      --mixed_precision no
-      "
+export SCRIPT_ARGS=${1} 
 
 echo $LAUNCHER $SCRIPT $SCRIPT_ARGS
 $LAUNCHER $SCRIPT $SCRIPT_ARGS

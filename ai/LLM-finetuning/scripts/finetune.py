@@ -1,4 +1,4 @@
-import os
+import os, argparse, time
 from transformers import AutoTokenizer, AutoModelForCausalLM, AutoModelWithLMHead, Trainer, TrainingArguments
 from datasets import load_dataset, DatasetDict
 from transformers import DataCollatorForLanguageModeling
@@ -6,10 +6,9 @@ from transformers import TrainerCallback
 import torch
 import transformers
 
-def main():
+def main(args):
 
-    model_name="openai-community/gpt2"  
-
+    model_name="openai-community/%s"%(args.model)  
     # Load dataset from the Hugging Face datasets library
     dataset = load_dataset("pierre-pessarossi/climate-question-answers")
 
@@ -51,10 +50,13 @@ def main():
     # The "labels" are the tokenized outputs:
         return model_inputs
 
-
+    
     # Load the model
+    start_time=time.time()
     model = AutoModelForCausalLM.from_pretrained(model_name,
+                                                
                                                 trust_remote_code=True)
+    print(f'Finished loading model in {time.time() - start_time:.3f}')
     # Load the tokenizer
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     tokenizer.pad_token = tokenizer.eos_token
@@ -64,7 +66,7 @@ def main():
     # "batched=True" implies passing examples in a batch instead of one at a time
     tokenized_dataset = climate_dataset_dict.map(
     preprocess_function, 
-    batched=True,batch_size=4,drop_last_batch=True)
+    batched=True,batch_size=args.batch_size,drop_last_batch=True)
 
     # Load the data collator (the batch maker given a dataset)
     data_collator = DataCollatorForLanguageModeling(
@@ -73,21 +75,21 @@ def main():
     )
 
     training_args = TrainingArguments(
-        output_dir=os.path.join(os.environ['BASEDIR'],'results'),
+        per_device_train_batch_size=args.batch_size,
+        output_dir=os.path.join(os.environ['BASEDIR'],"..",'results'),
         overwrite_output_dir=True,
         eval_strategy="epoch",
-        learning_rate=3e-4,
+        learning_rate=args.lr,
         logging_steps=10,
-        num_train_epochs=1,
-        per_device_train_batch_size=2,
+        num_train_epochs=args.epochs,
         save_steps=1000,
         save_total_limit=2,
-        deepspeed=os.path.join('ds_configs',os.environ['DS_CONFIG']),  # Path to DeepSpeed config file        
-        gradient_checkpointing=True,
+        deepspeed=os.path.join('ds_configs',args.ds_config),  # Path to DeepSpeed config file        
+        gradient_checkpointing=False,
         gradient_checkpointing_kwargs={'use_reentrant':True},
         report_to='tensorboard',
-        fp16=True,
-        logging_dir=os.path.join(os.environ['BASEDIR'],"logs"),
+        fp16=args.fp16,
+        logging_dir=os.path.join(os.environ['BASEDIR'],"..","logs"),
         logging_strategy='steps',
         log_level='info',
     )
@@ -112,4 +114,21 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--model", default='gpt2', type=str,
+                        help="name of model [gpt2,gpt2-xl]" )
+    parser.add_argument("--batch-size", default=1, type=int,
+                        help="Batch size" )
+    parser.add_argument("--ds-config", default="ds_config_nozero.json", 
+                        type=str, help="filename of deepspeed config file in JSON format" )
+    parser.add_argument("--lr", default=3e-4,type=float,
+                        help="Learning rate")
+    parser.add_argument("--epochs",type=int,default=1,
+                        help="Number of epochs to train the model")
+    parser.add_argument("--fp16",type=bool,default=True,
+                        help="The permissions when training the network")
+    parser.add_argument("--use-cached-model",type=bool,default=False,
+                        help="Disable downloading a model and look for it in cache directory.")
+    args = parser.parse_args()
+    
+    main(args)
